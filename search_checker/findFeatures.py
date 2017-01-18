@@ -34,7 +34,7 @@ for training_name in training_names:
     image_classes+=[class_id]*len(class_path)
     class_id+=1
 
-# Create feature extraction and keypoint detector objects
+# Create object extraction and keypoint detector objects
 # If using OpenCV 2.X, toggle commenting on this section
 sift = cv2.xfeatures2d.SIFT_create()
 des_list = []
