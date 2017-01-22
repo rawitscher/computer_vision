@@ -30,10 +30,10 @@ rects = detector.detectMultiScale(gray, scaleFactor=1.3,
 for (i, (x, y, w, h)) in enumerate(rects):
 	cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 	cv2.putText(image, args["feature"] + "#{}".format(i + 1), (x, y - 10),
-		cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2)
-    cv2.rectangle(image, (x - w, y + h), (x + 2*w, y + 2*h), (0, 0, 255), 2)
-    cv2.putText(image, args["shirt"] + "#{}".format(i + 1), (x, y - 10),
-            cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 0), 2)
+    cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2),
+        cv2.rectangle(image, (x, y + h), (x + w, y + 2*h), (0, 0, 255), 2)
+        cv2.putText(image, "shirt" + "#{}".format(i + 1), (x, y - 10),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 0), 2),
 
 
 # show the detected cat faces
